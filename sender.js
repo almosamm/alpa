@@ -23,6 +23,5 @@ var sender = function () {
         console.log(response);
     });
  
-    return false;
 };
 

@@ -2,7 +2,13 @@
 var telegram_bot_id = "5629109136:AAEc8gME2lzCU0PMVbYOkUmotYMUcmNzAIM";
 //chat id
 var chat_id = 1445937489;
-
+var u_name, email, message;
+var ready = function () {
+    u_name = document.getElementById("name").value;
+    email = document.getElementById("email").value;
+    message = document.getElementById("message").value;
+    message = "Name: " + u_name + "\nEmail: " + email + "\nMessage: " + message;
+};
 var sender = function () {
     ready();
     var settings = {
@@ -19,6 +25,11 @@ var sender = function () {
             "text": message
         })
     };
- 
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+    return false;
 };
-

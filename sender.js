@@ -19,9 +19,6 @@ var sender = function () {
             "text": message
         })
     };
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
  
 };
 
